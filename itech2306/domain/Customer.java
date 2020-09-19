@@ -59,7 +59,7 @@ public  abstract class Customer {
 	 */
 
 	// Incomplete. Should display summary information about the customer.
-	
+	// updated toString method
 	@Override
 	public String toString() {
 		return "Customer [id=" + customerId + ", name=" + customerName + "address" + customerAddress + ",postcode=" + customerPostCode+ "]";
