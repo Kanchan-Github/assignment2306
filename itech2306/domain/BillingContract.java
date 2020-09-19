@@ -41,6 +41,7 @@ public class BillingContract extends Customer {
 		service.add(scanner.next());
 	}
 //Service newServiceSTRING Service();
+	
 	ArrayList<string> services =  new ArrayList<string>();
 public void BillingContract(String name, int serviceType, int period) {   // customers contract
 	System.out.Println( "hi" + name +  " your current contract is " servicetype + "for time period of" + period);
