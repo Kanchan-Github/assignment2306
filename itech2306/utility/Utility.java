@@ -46,6 +46,9 @@ public static void main(String [] args)
     			// reading next line before looping 
     			//line will be null at the end of file
     			line = br.endLine();	
+    			
+    		} catch (IOException ioe) {
+    			ioe.printStackTrace();
     		}
     		return files;
     	}
