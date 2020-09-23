@@ -20,6 +20,13 @@ public  abstract class Customer {
 	 * Reports the name of the customer
 	 * @return
 	 */
+	public Customer(int id, String name, String address, int postCode) {
+		this.customerId = id;
+		this.customerName = name;
+		this.customerAddress = address;
+		this.customerPostCode = postCode;
+	}
+	
 	public int getId()
 	{
 		return customerId;

@@ -15,7 +15,7 @@ public static void main(String [] args)
     if( f2.isFile() && f2.canRead() && f2.canWrite() )
        System.out.print("File exists and can be used");
     else
-       System.out.print("File no good for purposes");
+       System.out.print("File is no good for purposes");
     List<File> f2 = readFileFromCSV(f2);
     //print all the customer from the customer file
     for(File f : f2) {
