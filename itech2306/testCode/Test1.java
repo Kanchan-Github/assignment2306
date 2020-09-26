@@ -36,7 +36,7 @@ public class RuleExceptionTester {
 	  public ExpectedException exception = ExpectedException.none();
 
 	  @Test
-	  public void throwsIllegalArgumentExceptionIfIconIsNull() {
+	  public void throwsIllegalArgumentException() {
 	    exception.expect(IllegalArgumentException.class);
 	    exception.expectMessage("Negative value not allowed");
 	    ClassToBeTested t = new ClassToBeTested();
