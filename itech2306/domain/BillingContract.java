@@ -36,7 +36,7 @@ public class BillingContract extends Customer {
 											internet + ". internet \n" +
 											end + ".  To exit";
 	public void addServices(system.in) {
-		Scanner scanner = new Scanner();
+		Scanner contract = new Scanner();
 		services.add(string system.in);
 		service.add(scanner.next());
 	}
