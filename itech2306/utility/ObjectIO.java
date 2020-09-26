@@ -1,6 +1,11 @@
+/***
+ *  @author Saurav and Kanchan
+ *Object input output system
+ */
 package utility;
 
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import domain.Customer;
@@ -11,10 +16,12 @@ public class ObjectIO implements Serializable{
 	 
 	    public static void main(String args[]) {
 	 
-	       ObjectIO objectIO = new ObjectIO();
+	      // ObjectIO objectIO = new ObjectIO();
 	 
 	        Customer customer = new Customer(1,"Derek",2218);
 	        objectIO.WriteObjectToFile(customer);
+	        objectIO.WriteObjectToFile(contract);
+	        objectIO.WriteObjectToFile(plan);
 	        
 	      /*  try {
 	        	writeToFile(customer);
@@ -23,6 +30,13 @@ public class ObjectIO implements Serializable{
 	        }
 	    }
 	    */
+	        try {
+	        	readFile();
+	        } catch (ClassNotFoundException | IOException e) {
+	        	System.out.println(e.getMessage());
+	        }
+	        
+	        // object serialization 
 	 
 	    public void WriteObjectToFile(Object customer) {
 	 
@@ -38,11 +52,14 @@ public class ObjectIO implements Serializable{
 	            ex.printStackTrace();
 	        }
 	        public static void writeFile(Person p) throws IOException{
-	        	ObjectOutputStregam objectOutputStream = new ObjectOutputStream(new FileOutputStream("Customer.bin"));
+	        	ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("Customer.bin"));
 	        	objectOutputStream.writeObject(customer);
 	        }
-	        public static void readFile() {
-	        	ObjectInputStream objectInputStream = new ObjectInputStream(new FileInput)
+	        public static void readFile() throws IOException, ClassNotFoundException {
+	        	ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("Customer.bin"));
+	        	
+	        	Customer name = (Person) objectInputStream.readObject();
+	        	System.out.println(name);
 	        }
 	    }
 	}
