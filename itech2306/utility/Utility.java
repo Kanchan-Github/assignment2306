@@ -1,5 +1,6 @@
 package utility;
 import java.io.*;
+import java.util.regex.*;
 
 public class Utility {
 String fileName1 = "files/ITECH2306_2020_Load_Contracts.csv";
@@ -52,7 +53,28 @@ public static void main(String [] args)
     		}
     		return files;
     	}
-    private static file createFile(String[] metadata) {
+    	// function to validating username
+    	public static boolean isValidUsername(String name) { 
+            String regex = "^[aA-zZ]\\w{5,29}$";
+            Pattern p = Pattern.compile(regex); 
+      
+            // If the username is empty 
+            // return false
+            if (name == null) { 
+                return false; 
+            }
+            Matcher m = p.matcher(name); 
+      
+            // Return if the username 
+            // matched the ReGex 
+            return m.matches(); 
+        }
+       
+      
+          
+    	
+    	// assigning values to object variables    
+    private static c1 createFile(String[] metadata) {
     	String customerType = metadata[0];
     	String name = metadata[1];
     	String address = metadata[2];
@@ -60,9 +82,16 @@ public static void main(String [] args)
     	String address = metadata[4];
     	int documentId = metadata[5];
     	
+    	if(name.length(5)) {
+    		
+    	}
+    	
     	//create and return file of this metadata
-    	return new file(customerType, name, id, address, documentId);
+    	return new c1(customerType, name, id, address, documentId);
+    	
     }
+    createFile.close();
+    
     
 }
 }
